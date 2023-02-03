@@ -4,6 +4,8 @@ import 'package:clima/services/networking.dart';
 
 import 'package:http/http.dart';
 
+const apiKey = 'efc5cf13463f01d363fcf9732fc35329';
+
 class LoadingScreen extends StatefulWidget {
   @override
   _LoadingScreenState createState() => _LoadingScreenState();
@@ -16,7 +18,6 @@ class _LoadingScreenState extends State<LoadingScreen> {
   void initState() {
     super.initState();
     getLocationData();
-
   }
 
   Future getLocationData() async {
@@ -25,10 +26,14 @@ class _LoadingScreenState extends State<LoadingScreen> {
     latitude = location.latitude;
     longitude = location.longitude;
 
+  
+
     NetworkHelper networkHelper = NetworkHelper(
         'http://api.openweathermap.org/data/2.5/weather?lat=$latitude&lon=$longitude&appid=efc5cf13463f01d363fcf9732fc35329');
 
     var weatherData = await networkHelper.getData();
+
+    print(weatherData);
   }
 
   // String url =
