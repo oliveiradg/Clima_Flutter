@@ -11,6 +11,7 @@ Future<void> performTasks() async {
 }
 
 void task1() {
+  // ignore: unused_local_variable
   String result = 'task 1 data';
   print('Task 1 complete');
 }
@@ -26,6 +27,9 @@ Future task2() async {
 }
 
 void task3(String task2Data) {
+  // ignore: unused_local_variable
   String result = 'task 3 data';
+  
   print('Task 3 complete with $task2Data');
+  
 }

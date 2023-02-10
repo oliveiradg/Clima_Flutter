@@ -4,11 +4,9 @@ import 'package:clima/services/weather.dart';
 import 'city_screen.dart';
 
 class LocationScreen extends StatefulWidget {
-  
+  LocationScreen({this.locationWeather});
 
   final locationWeather;
-
-  LocationScreen(locationWeather, weatherData, ) : locationWeather = locationWeather;
 
   @override
   _LocationScreenState createState() => _LocationScreenState();
@@ -67,7 +65,7 @@ class _LocationScreenState extends State<LocationScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  ElevatedButton(
+                  FlatButton(
                     onPressed: () async {
                       var weatherData = await weather.getLocationWeather();
                       updateUI(weatherData);
@@ -77,7 +75,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       size: 50.0,
                     ),
                   ),
-                  ElevatedButton(
+                  FlatButton(
                     onPressed: () async {
                       var typedName = await Navigator.push(
                         context,
